@@ -4,6 +4,9 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
+    static String[] row1;
+    static String[] row2;
+    static String[] row3;
 
     public static void main(String[] args) throws Exception {
 
@@ -14,9 +17,7 @@ public class Client {
 
         InputStream inputStream = socket.getInputStream();
 
-        String row1[];
-        String row2[];
-        String row3[];
+
 
         row1 = new String[3];
         row2 = new String[3];
@@ -54,56 +55,41 @@ public class Client {
                 // herefter printes det nye "bord"
                 if (choice.equals("1")) {
                     row1[0] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    //System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
+                    //System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
+                    //System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
                 } else if (choice.equals("2")) {
                     row1[1] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("3")) {
                     row1[2] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("4")) {
                     row2[0] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("5")) {
                     row2[1] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("6")) {
                     row2[2] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("7")) {
                     row3[0] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("8")) {
                     row3[1] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 } else if (choice.equals("9")) {
                     row3[2] = "X";
-                    System.out.println(row1[0] + " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0] + " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0] + " " + row3[1] + " " + row3[2]);
+                    printboard();
                 }
             }
 
@@ -117,56 +103,38 @@ public class Client {
                 // hvorefter det opdateret "bord" bliver printet
                 if(choice.equals("1")){
                     row1[0] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
                 }else if (choice.equals("2")){
                     row1[1] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("3")){
                     row1[2] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("4")){
                     row2[0] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("5")){
                     row2[1] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("6")){
                     row2[2] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("7")){
                     row3[0] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("8")){
                     row3[1] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("9")){
                     row3[2] = "O";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
                 }
 
                 // her sendes det man skrev til Server
@@ -179,9 +147,11 @@ public class Client {
             Thread.sleep(1000);
         }
 
-
-
-
+    }
+    public static void printboard(){
+        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
+        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
+        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
 
     }
 }

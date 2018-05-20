@@ -5,6 +5,10 @@ import java.net.Socket;
 
 public class Server {
 
+    static String[] row1;
+    static String[] row2;
+    static String[] row3;
+
 
     public static void main(String[] args)throws Exception{
 
@@ -14,9 +18,8 @@ public class Server {
         InputStream inputStream = socket.getInputStream();
 
         //deklarerer String arrays og giver hvad deres længde er og hvad der skal stå i dem
-        String row1[];
-        String row2[];
-        String row3[];
+
+
 
         row1 = new String[3];
         row2 = new String[3];
@@ -32,18 +35,12 @@ public class Server {
         row3[1] = "8";
         row3[2] = "9";
 
-
-
         BufferedReader buffOut = new BufferedReader(new InputStreamReader(inputStream));
         BufferedReader buffIn = new BufferedReader(new InputStreamReader(System.in));
 
         OutputStream outputStream = socket.getOutputStream();
 
-
         PrintWriter printWriter = new PrintWriter(outputStream,true);
-
-
-
 
         while(true){
 
@@ -56,56 +53,39 @@ public class Server {
                 // og derefter skal det opdateret "bord" printes
                     if(choice.equals("1")){
                         row1[0] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
+
                     }else if (choice.equals("2")){
                         row1[1] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("3")){
                         row1[2] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("4")){
                         row2[0] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("5")){
                         row2[1] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("6")){
                         row2[2] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("7")){
                         row3[0] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("8")){
                         row3[1] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
 
                     }else if (choice.equals("9")){
                         row3[2] = "O";
-                        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                        printboard();
                     }
 
             }
@@ -119,56 +99,38 @@ public class Server {
                 // på tilsvarende plads og det opdateret "bord" printes
                 if(choice.equals("1")){
                     row1[0] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+
+                    printboard();
                 }else if (choice.equals("2")){
                     row1[1] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("3")){
                     row1[2] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("4")){
                     row2[0] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("5")){
                     row2[1] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("6")){
                     row2[2] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("7")){
                     row3[0] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
-
+                    printboard();
                 }else if (choice.equals("8")){
                     row3[1] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
 
                 }else if (choice.equals("9")){
                     row3[2] = "X";
-                    System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
-                    System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
-                    System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+                    printboard();
                 }
                 // her sendes det man skrev til Client
                 printWriter.println(choice);
@@ -180,4 +142,13 @@ public class Server {
         }
 
     }
+
+    public static void printboard(){
+        System.out.println(row1[0]+ " " + row1[1] + " " + row1[2]);
+        System.out.println(row2[0]+ " " + row2[1] + " " + row2[2]);
+        System.out.println(row3[0]+ " " + row3[1] + " " + row3[2]);
+
+    }
+
+
 }
