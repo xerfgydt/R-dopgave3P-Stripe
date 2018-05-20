@@ -46,94 +46,48 @@ public class Server {
 
             if(buffOut.ready()) { // modtager fra client
                 // laver et string objekt af buffout der blev modtaget fra Client
-                String choice = buffOut.readLine();
+                int choice = Integer.parseInt(buffOut.readLine());
 
                 System.out.println("Client Chose This Spot " + choice);
                 // alle disse if else siger at hvis det der blev modtaget var et tal mellem 1-9 skal der sættes et O på den tilsvarende plads
                 // og derefter skal det opdateret "bord" printes
-                    if(choice.equals("1")){
-                        row1[0] = "O";
+                    if(choice == 1 || choice == 2 || choice == 3){
+                        row1[choice- 1] = "O";
                         printboard();
 
-                    }else if (choice.equals("2")){
-                        row1[1] = "O";
+                    }else if (choice == 4 || choice == 5 || choice == 6){
+                        row2[choice - 4] = "O";
                         printboard();
 
-                    }else if (choice.equals("3")){
-                        row1[2] = "O";
+                    }else if (choice == 7 || choice == 8 || choice == 9){
+                        row3[choice-7] = "O";
                         printboard();
 
-                    }else if (choice.equals("4")){
-                        row2[0] = "O";
-                        printboard();
 
-                    }else if (choice.equals("5")){
-                        row2[1] = "O";
-                        printboard();
-
-                    }else if (choice.equals("6")){
-                        row2[2] = "O";
-                        printboard();
-
-                    }else if (choice.equals("7")){
-                        row3[0] = "O";
-                        printboard();
-
-                    }else if (choice.equals("8")){
-                        row3[1] = "O";
-                        printboard();
-
-                    }else if (choice.equals("9")){
-                        row3[2] = "O";
-                        printboard();
-                    }
 
             }
 
             if(buffIn.ready()){ //sender til client
 
                 // laver string objekt af buffin (altså det som server skriver)
-                String choice = buffIn.readLine();
-                System.out.println("Server Chose this Spot " + choice);
+                int choice2 = Integer.parseInt(buffIn.readLine());
+                System.out.println("Server Chose this Spot " + choice2);
                 // if else spørger om det man skrev var et tal fra 1-9 og i så tilfælde skal der sættes i X
                 // på tilsvarende plads og det opdateret "bord" printes
-                if(choice.equals("1")){
-                    row1[0] = "X";
-
+                if(choice2 == 1 || choice2 == 2 || choice2 == 3){
+                    row1[choice2 - 1] = "X";
                     printboard();
-                }else if (choice.equals("2")){
-                    row1[1] = "X";
-                    printboard();
-
-                }else if (choice.equals("3")){
-                    row1[2] = "X";
+                }else if(choice2 == 4 || choice2 == 5|| choice2 == 6){
+                    row2[choice2 - 4] = "X";
                     printboard();
 
-                }else if (choice.equals("4")){
-                    row2[0] = "X";
+                }else if (choice2 == 7 || choice2 == 8 || choice2 == 9 ){
+                    row3[choice2 - 7] = "X";
                     printboard();
 
-                }else if (choice.equals("5")){
-                    row2[1] = "X";
-                    printboard();
-
-                }else if (choice.equals("6")){
-                    row2[2] = "X";
-                    printboard();
-
-                }else if (choice.equals("7")){
-                    row3[0] = "X";
-                    printboard();
-                }else if (choice.equals("8")){
-                    row3[1] = "X";
-                    printboard();
-
-                }else if (choice.equals("9")){
-                    row3[2] = "X";
-                    printboard();
                 }
                 // her sendes det man skrev til Client
-                printWriter.println(choice);
+                printWriter.println(choice2);
 
         }
 
@@ -141,6 +95,7 @@ public class Server {
             Thread.sleep(1000);
         }
 
+    }
     }
 
     public static void printboard(){
